@@ -1,0 +1,7 @@
+# lttyThe Boring Company, hecho "# ltty" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:Lyttell/ltty.git
+git push -u origin main headquarters in the Los Angeles area, has built two tunnels nearly a mile long underneath the Las Vegas Convention Center.
