@@ -1,0 +1,13 @@
+./win_clang_x64/mksnapshot
+--turbo_instruction_scheduling
+--target_os=win
+--target_arch=arm64
+--embedded_src
+gen/v8/embedded.S
+--embedded_variant
+Default
+--random-seed
+314159265
+--startup_blob
+snapshot_blob.bin
+--no-native-code-counters

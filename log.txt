@@ -1,0 +1,104 @@
+[00:00:00] Build started
+[00:00:00] git config --global core.autocrlf input
+[00:00:00] git clone -q -n --branch=v5.3.0 https://github.com/felixrieseberg/windows-build-tools.git C:\projects\windows-build-tools
+[00:00:01] git checkout -qf v5.3.0
+[00:00:02] Running Install scripts
+[00:00:02] if ($env:NPM_TOKEN.length -eq 0) {
+[00:00:02]   Write-Host "This job originated from an untrusted source.";
+[00:00:02]   if (Test-Path ./.npmrc) {
+[00:00:02]     Write-Host "Renaming .npmrc to disable it";
+[00:00:02]     Rename-Item -Path ./.npmrc -NewName "npmrcdisabled";
+[00:00:02]   }
+[00:00:02] }
+[00:00:02] 
+[00:00:02] Install-Product node $env:nodejs_version
+[00:00:02] Uninstalling node 8.17.0 (x86)...
+[00:00:02] Installing node 10.0.0 (x86)...
+[00:00:02] npm install --ignore-scripts
+[00:00:05] npm WARN read-shrinkwrap This version of npm is compatible with lockfileVersion@1, but package-lock.json was generated for lockfileVersion@2. I'll try to do my best with it!
+[00:00:07] npm WARN notice [SECURITY] yargs-parser has the following vulnerability: 1 low. Go here for more details: https://www.npmjs.com/advisories?search=yargs-parser&version=10.1.0 - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+[00:00:07] npm WARN notice [SECURITY] ws has the following vulnerability: 1 moderate. Go here for more details: https://www.npmjs.com/advisories?search=ws&version=5.2.3 - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+[00:00:09] npm WARN notice [SECURITY] set-value has the following vulnerability: 1 high. Go here for more details: https://www.npmjs.com/advisories?search=set-value&version=2.0.1 - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+[00:00:10] npm WARN notice [SECURITY] mem has the following vulnerability: 1 low. Go here for more details: https://www.npmjs.com/advisories?search=mem&version=3.0.1 - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+[00:00:11] npm WARN notice [SECURITY] lodash has the following vulnerability: 1 high. Go here for more details: https://www.npmjs.com/advisories?search=lodash&version=4.17.21 - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+[00:00:11] npm WARN notice [SECURITY] hosted-git-info has the following vulnerability: 1 moderate. Go here for more details: https://www.npmjs.com/advisories?search=hosted-git-info&version=2.5.0 - Run `npm i npm@latest -g` to upgrade your npm version, and then `npm audit` to get more info.
+[00:00:17] npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.13 (node_modules\fsevents):
+[00:00:17] npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"ia32"})
+[00:00:17] 
+[00:00:17] added 604 packages in 11.804s
+[00:00:17] node --version
+[00:00:17] v10.0.0
+[00:00:17] npm --version
+[00:00:17] 5.6.0
+[00:00:17] npm test
+[00:00:18] 
+[00:00:18] > windows-build-tools@5.3.0 test C:\projects\windows-build-tools
+[00:00:18] > npm run lint && npm run unit
+[00:00:18] 
+[00:00:19] 
+[00:00:19] > windows-build-tools@5.3.0 lint C:\projects\windows-build-tools
+[00:00:19] > tslint -c tslint.json -p tsconfig.json "src/**/*.ts"
+[00:00:19] 
+[00:00:21] no-use-before-declare is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead.
+[00:00:23] 
+[00:00:23] > windows-build-tools@5.3.0 unit C:\projects\windows-build-tools
+[00:00:23] > jest
+[00:00:23] 
+[00:00:25] ts-jest[backports] (WARN) "[jest-config].globals.ts-jest.tsConfigFile" is deprecated, use "[jest-config].globals.ts-jest.tsConfig" instead.
+[00:00:25] ts-jest[backports] (WARN) Your Jest configuration is outdated. Use the CLI to help migrating it: ts-jest config:migrate <config-file>.
+[00:00:25] ts-jest[versions] (WARN) Version 4.3.4 of typescript installed has not been tested with ts-jest. If you're experiencing issues, consider using a supported version (>=2.7.0 <4.0.0). Please do not report issues in ts-jest if you are using unsupported versions.
+[00:00:27] PASS __tests__/utils/installation-success-test.ts
+[00:00:27] PASS __tests__/utils/get-build-tools-installer-path-test.ts
+[00:00:27] PASS __tests__/utils/clean-test.ts
+[00:00:27] PASS __tests__/utils/get-python-installer-path-test.ts
+[00:00:28] PASS __tests__/utils/ensure-windows-test.ts
+[00:00:28]   ● Console
+[00:00:28] 
+[00:00:28]     console.log src/utils/ensure-windows.ts:7
+[00:00:28]       This tool requires Windows.
+[00:00:28]       
+[00:00:28]     console.log src/utils/ensure-windows.ts:7
+[00:00:28]       This tool requires Windows.
+[00:00:28]       
+[00:00:28] 
+[00:00:28] PASS __tests__/utils/execute-child-process-test.ts
+[00:00:29] PASS __tests__/utils/get-is-python-installed-test.ts
+[00:00:29] PASS __tests__/utils/remove-path-test.ts
+[00:00:29] PASS __tests__/utils/get-work-dir-test.ts
+[00:00:29] 
+[00:00:29] Test Suites: 9 passed, 9 total
+[00:00:29] Tests:       19 passed, 19 total
+[00:00:29] Snapshots:   0 total
+[00:00:29] Time:        5.795s
+[00:00:29] Ran all test suites.
+[00:00:29] if %APPVEYOR_REPO_TAG% EQU true npm config set '//registry.npmjs.org/:_authToken' "%NPM_TOKEN%" && npm publish .
+[00:00:31] 
+[00:00:31] > windows-build-tools@5.3.0 prepare .
+[00:00:31] > npm run build
+[00:00:31] 
+[00:00:31] 
+[00:00:31] > windows-build-tools@5.3.0 build C:\projects\windows-build-tools
+[00:00:31] > tsc -p tsconfig.json
+[00:00:31] 
+[00:00:35] src/environment.ts(48,45): error TS2794: Expected 1 arguments, but got 0. Did you forget to include 'void' in your type argument to 'Promise'?
+[00:00:35] npm ERR! code ELIFECYCLE
+[00:00:35] npm ERR! errno 2
+[00:00:35] npm ERR! windows-build-tools@5.3.0 build: `tsc -p tsconfig.json`
+[00:00:35] npm ERR! Exit status 2
+[00:00:35] npm ERR! 
+[00:00:35] npm ERR! Failed at the windows-build-tools@5.3.0 build script.
+[00:00:35] npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+[00:00:35] 
+[00:00:35] npm ERR! A complete log of this run can be found in:
+[00:00:35] npm ERR!     C:\Users\appveyor\AppData\Roaming\npm-cache\_logs\2021-06-20T19_50_50_759Z-debug.log
+[00:00:35] npm ERR! code ELIFECYCLE
+[00:00:35] npm ERR! errno 2
+[00:00:35] npm ERR! windows-build-tools@5.3.0 prepare: `npm run build`
+[00:00:35] npm ERR! Exit status 2
+[00:00:35] npm ERR! 
+[00:00:35] npm ERR! Failed at the windows-build-tools@5.3.0 prepare script.
+[00:00:35] npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+[00:00:35] 
+[00:00:35] npm ERR! A complete log of this run can be found in:
+[00:00:35] npm ERR!     C:\Users\appveyor\AppData\Roaming\npm-cache\_logs\2021-06-20T19_50_50_775Z-debug.log
+[00:00:35] Command exited with code 2
